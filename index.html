@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Smooch&display=swap" rel="stylesheet"> 
+    <title>Hangman VM</title>
+    <link rel="stylesheet" href="css/style-main.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+    <body>
+        <div id="menu">
+            <div id="container">
+                <div id="iniciar-box">
+                <div class="menu-iniciar-box">
+                    <div class="button-iniciar-box">
+                    <div class="btn-iniciar-event">
+                        <button class="btn-iniciar" onclick="iniciarGame(); mostra(); lestGo()">Começar a jogar</button>
+                    </div>
+                    <button class="btn-addPalavra" onclick="addPalavra()">Adicionar palavra</button>
+                    </div>
+                    <div class="menu-addPalavra-box">
+                    <div class="addPalavra-header-box">
+                        <div class="add-Palavra-resp">
+                        <p class="success"></p>
+                        <p class="cancel"></p>
+                        </div>
+                        <div class="add-Palavra-actions">
+                        <button class="btn-info-input" onclick="infoAddPalavra()">Info</button>
+                        <button class="btn-exit-addPalavra" onclick="exitAddPalavra()">X</button>
+                        </div>
+                    </div>
+                    <input class="text-user" type="text" placeholder="digite a palavra aqui...">
+                    <div class="addPalavra-info-box">
+                        <ul>
+                        <h4><strong>A palavra tem que ser :</strong></h4>
+                        <li>Menor que 8 letras</li>
+                        <li>Maior que 3 letras</li>
+                        <li>Sem acentos</li>
+                        <li>Sem numeros</li>
+                        <li>Sem simbolos</li>
+                        </ul>
+                        <p>Click duas vezes para fechar</p>
+                    </div>
+                    <div class="button-addPalavra-box">
+                        <button class="btn-save-Palavra" id="btn-save-Palavra" onclick="addNovaPalavra()">Salvar</button>
+                    </div>
+                    </div>
+                </div>
+                </div> 
+            </div>
+        </div>
+        <div id="iniciarJogo">
+            <h1>HANGMAN</h1>
+            <div>
+                <p class="mensagem">Encontre a palavra secreta - Digite uma letra para começar o jogo!</p>
+            </div>
+            <div class="jogo-container">
+                <svg height="250" width="200" class="figura-container">
+                    
+                    <!-- Forca -->
+
+                    <line x1="60" y1="20" x2="140" y2="20" />
+                    <line x1="140" y1="20" x2="140" y2="50" />
+                    <line x1="60" y1="20" x2="60" y2="230" />
+                    <line x1="20" y1="230" x2="100" y2="230" />
+
+                    <!-- Cabeça do Boneco  -->
+
+                    <circle cx="140" cy="70" r="20" class="parte-da-figura" />
+
+                    <!-- Corpo do Boneco -->
+
+                    <line x1="140" y1="90" x2="140" y2="150" class="parte-da-figura" />
+
+                    <!-- Braços do Boneco -->
+
+                    <line x1="140" y1="120" x2="120" y2="100" class="parte-da-figura"/>
+                    <line x1="140" y1="120" x2="160" y2="100" class="parte-da-figura"/>
+                    
+                    <!-- Pernas do Boneco -->
+                    
+                    <line x1="140" y1="150" x2="120" y2="180" class="parte-da-figura"/>
+                    <line x1="140" y1="150" x2="160" y2="180" class="parte-da-figura"/>
+
+                </svg>
+                <div class="letras-erradas-container">
+                    <div id="letras-erradas"></div>
+                </div>
+                <div class="palavra" id="palavra"></div>
+            </div>
+            <!-- Box para mensagem final -->
+            <div class="popup-container" id="popup-container">
+                <div class="popup">
+                    <p class="info-resposta">A palavra era: </p>
+                    <p class="palavra-secreta"></p>
+                    <h2 id="mensagem-final"></h2>
+                    <button id="restart">Reiniciar</button>
+                </div>
+            </div>
+            <!-- Aviso -->
+            <div class="aviso-container" id="aviso-container">
+                <p>Você já digitou está letra</p>
+            </div>
+            <div class="buttons-box">
+                <button class="btn-suspender" onclick="suspender()">Menu</button>
+            </div>
+            
+        </div>
+        <script src="js/main.js"></script>
+        <script src="js/jogar.js"></script>
+        <script src="js/addPalavra.js"></script>
+    </body>
+</html>

@@ -1,0 +1,220 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+
+
+body{
+    color: #E5E5E5;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    margin: 55px;
+    overflow: hidden;
+    background: linear-gradient(45deg, #F5E6CA, #FB9300, #F54748, #343F56);
+    background-size: 400% 400%;
+    animation: colors 30s ease infinite; 
+
+}
+
+
+
+@keyframes colors {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+#iniciarJogo {
+    display: none;
+    position: absolute;
+    overflow: hidden; 
+}
+
+h1{
+    padding-top: 55px;
+    margin: 10px;
+    text-align: center;
+    font-size: 40px;
+}
+
+
+.jogo-container{
+    padding: 20px 30px;
+    margin: auto;
+    height: 350px;
+    width: 450px;
+}
+
+.figura-container{
+    fill: transparent;
+    stroke: #E5E5E5;
+    stroke-width: 4px;
+    stroke-linecap: round;
+}
+
+.parte-da-figura{
+    display: none;
+}
+
+.letras-erradas-container{
+    position: absolute;
+    top: 200px;
+    right: 80px;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.letras-erradas-container p{
+    margin: 12px 0 0;
+}
+
+.letras-erradas-container span{
+    font-size: 24px;
+}
+
+.palavra{
+    display: flex;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 150px;
+}
+
+.letra{
+    border-bottom: 3px solid #0a3871;
+    display: inline-flex;
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 3px;
+    height: 50px;
+    width: 20px;
+}
+
+.mensagem {
+    margin-top: 30px;
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.buttons-box {
+   display: flex;
+   color: #E5E5E5;
+   justify-content: center;
+   flex-wrap: wrap;
+   align-items: center;
+   min-height: 67px;
+   width: 100%;
+}
+
+
+.info-resposta {
+    opacity: 0;
+    text-align: center;
+}
+
+.palavra-secreta {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #F4D03F;
+}
+
+.buttons-box button {
+    margin: .5rem;
+    border-radius: 1rem;
+    height: 3rem;
+    width: 14rem;
+}
+
+button:hover {
+    filter: brightness(1.6)
+  }
+  
+.buttons-box button:hover {
+    transform: scale(1.01);
+}
+
+
+.btn-suspender {
+    background: var(--bg);
+    color: #E5E5E5;
+    border: solid 1px var(--border-primary);
+    width: 100px !important;
+    margin-bottom: 60px !important;
+}
+  
+
+.popup-container{
+    background-color: rgba(0,0,0,0.3);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup{
+    background-color: #0a3871;
+    color: #E5E5E5;
+    border-radius: 5px;
+    box-shadow: 0 15px 10px 3px rgba(0,0,0,0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+.popup button{
+    cursor: pointer;
+    background-color: #fff;
+    color: black;
+    border: 0;
+    margin-top: 20px;
+    padding: 12px 20px;
+    font-size: 16px;
+}
+
+.popup button:active{
+    transform: scale(0.98);
+}
+
+.popup button:focus{
+    outline: 0;
+}
+
+.aviso-container{
+    background-color: #0a3871;
+    color: #E5E5E5;
+    border-radius: 10px 10px 0 0;
+    padding: 15px 20px;
+    position: absolute;
+    bottom: -50px;
+    transition: transform 0.3s ease-in-out;
+    margin-left: 120px;
+}
+
+.aviso-container p{
+    margin: 0;
+
+}
+
+.aviso-container.show{
+    transform: translateY(-50px);
+}
